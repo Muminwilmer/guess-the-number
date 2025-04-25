@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://filxpgj0m6vd"]
+[gd_scene load_steps=4 format=3 uid="uid://filxpgj0m6vd"]
 
 [ext_resource type="Script" uid="uid://dmbg33dv6g4ww" path="res://Assets/Scripts/Scenes/death.gd" id="1_dp17d"]
 [ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="2_13h3i"]
+[ext_resource type="AudioStream" uid="uid://oirhp7vgce60" path="res://Assets/Audio/Game Over.mp3" id="3_13h3i"]
 
 [node name="Death" type="Control"]
 layout_mode = 3
@@ -41,5 +42,9 @@ theme_override_colors/font_color = Color(0.368627, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_13h3i")
 theme_override_font_sizes/font_size = 100
 text = "You died.."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_13h3i")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
