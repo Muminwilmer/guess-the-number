@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi6iyv0sqlnys"]
+
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="1_6c87s"]
+[ext_resource type="Script" uid="uid://dmbg33dv6g4ww" path="res://Assets/Scripts/Scenes/death.gd" id="1_8uq58"]
+[ext_resource type="AudioStream" uid="uid://blc5yasueel3p" path="res://Assets/Audio/Victorious Horizon.mp3" id="2_u8a4w"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uq58")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u8a4w")
+autoplay = true
+parameters/looping = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.573608, 1, 0.935448, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 73.0
+offset_right = 854.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(2.88785e-07, 0.458022, 0.629441, 1)
+theme_override_fonts/font = ExtResource("1_6c87s")
+theme_override_font_sizes/font_size = 80
+text = "You won!
+Thanks for playing"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 267.0
+offset_right = 636.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("1_6c87s")
+theme_override_font_sizes/font_size = 40
+text = "Replay"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drk1wsn4wkg57"
+path="res://.godot/imported/Chasing the Horizon.mp3-e84f892a93974bc56086b66d30c928fe.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Chasing the Horizon.mp3"
+dest_files=["res://.godot/imported/Chasing the Horizon.mp3-e84f892a93974bc56086b66d30c928fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

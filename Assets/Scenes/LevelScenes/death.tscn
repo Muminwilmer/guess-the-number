@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://filxpgj0m6vd"]
+
+[ext_resource type="Script" uid="uid://dmbg33dv6g4ww" path="res://Assets/Scripts/Scenes/death.gd" id="1_dp17d"]
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="2_13h3i"]
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dp17d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 222.0
+offset_right = 646.0
+offset_bottom = 299.0
+theme_override_fonts/font = ExtResource("2_13h3i")
+theme_override_font_sizes/font_size = 40
+text = "Replay"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 84.0
+offset_right = 759.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0.368627, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_13h3i")
+theme_override_font_sizes/font_size = 100
+text = "You died.."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

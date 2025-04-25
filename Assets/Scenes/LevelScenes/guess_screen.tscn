@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://csxntouotvhjv"]
+
+[ext_resource type="Script" uid="uid://m1nvqba1bqea" path="res://Assets/Scripts/Scenes/guess_screen.gd" id="1_7j7f1"]
+[ext_resource type="AudioStream" uid="uid://oipjxksd48uf" path="res://Assets/Audio/Running Through the Green Guess.mp3" id="2_npu2y"]
+
+[node name="GuessScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7j7f1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.111213, 0.146017, 0.199135, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 112.0
+offset_right = 700.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 32
+text = "Guess the number!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Guess" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 196.0
+offset_right = 644.0
+offset_bottom = 227.0
+placeholder_text = "Number:"
+max_length = 3
+clear_button_enabled = true
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 260.0
+offset_right = 671.0
+offset_bottom = 324.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_npu2y")
+autoplay = true
+parameters/looping = true
+
+[connection signal="text_changed" from="Guess" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="Guess" to="." method="_on_line_edit_text_submitted"]

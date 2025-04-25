@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2s3akswy2ypk"]
+
+[ext_resource type="Script" uid="uid://dk5e3j3u8usbq" path="res://Assets/Scenes/EnemyScenes/smoke_cloud.gd" id="1_m1qsr"]
+[ext_resource type="Texture2D" uid="uid://d3aruwppwwk82" path="res://Assets/Textures/Angry.png" id="1_ugfx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoet7"]
+size = Vector2(64, 64)
+
+[node name="Death" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_m1qsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xoet7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ugfx2")
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
